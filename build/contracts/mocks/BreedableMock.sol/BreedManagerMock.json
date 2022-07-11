@@ -1,0 +1,63 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "BreedManagerMock",
+  "sourceName": "contracts/mocks/BreedableMock.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_male",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_female",
+          "type": "uint256"
+        }
+      ],
+      "name": "breed",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "signature",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_gender",
+          "type": "uint256"
+        }
+      ],
+      "name": "registerGender",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50610152806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80636b0a36cc1461003b578063d9ecad7b14610051575b600080fd5b61004f61004936600461007b565b50505050565b005b61006761005f3660046100fa565b600192915050565b604051901515815260200160405180910390f35b6000806000806060858703121561009157600080fd5b843567ffffffffffffffff808211156100a957600080fd5b818701915087601f8301126100bd57600080fd5b8135818111156100cc57600080fd5b8860208285010111156100de57600080fd5b6020928301999098509187013596604001359550909350505050565b6000806040838503121561010d57600080fd5b5050803592602090910135915056fea264697066735822122038994ff09bd18a839dc925853e7ae705069cc6a4d4b40fdbbf33b3169f85b26f64736f6c634300080d0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80636b0a36cc1461003b578063d9ecad7b14610051575b600080fd5b61004f61004936600461007b565b50505050565b005b61006761005f3660046100fa565b600192915050565b604051901515815260200160405180910390f35b6000806000806060858703121561009157600080fd5b843567ffffffffffffffff808211156100a957600080fd5b818701915087601f8301126100bd57600080fd5b8135818111156100cc57600080fd5b8860208285010111156100de57600080fd5b6020928301999098509187013596604001359550909350505050565b6000806040838503121561010d57600080fd5b5050803592602090910135915056fea264697066735822122038994ff09bd18a839dc925853e7ae705069cc6a4d4b40fdbbf33b3169f85b26f64736f6c634300080d0033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

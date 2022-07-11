@@ -1,0 +1,596 @@
+@font-face {
+    font-family: 'pixel-point';
+    src: url('../assets/Fonts/karmatic-arcade.regular.ttf')format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Raleway';
+    src: url('../assets/Fonts/Minecraft.ttf')format('woff2');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('../assets/Fonts/Montserrat-Bold.ttf')format('woff2');
+}
+
+
+.presentation-box {
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(2, 39, 65, 0.53), rgba(2, 39, 65, 0.53)), url("../assets/img/kyoto-background-animation.gif");
+}
+.presentation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.presentation-logo {
+    width: 360px;
+    height: 140px;
+}
+.button-connect-focus {
+    background-color: #04D9C3!important;
+}
+.presentation-description {
+    font-family: 'Raleway', sans-serif;
+    width: 780px;
+    text-align: center;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-top: 90px;
+    margin-bottom: 80px;
+    letter-spacing: 2px;
+}
+.learn-more-btn{
+    border: 2px solid #04D9C3;
+    background-color: transparent   ;
+    filter: drop-shadow(0px 4px 8px rgba(54, 123, 245, 0.24));
+    border-radius: 4px;
+    font-family: 'Raleway';
+    font-size: 20px;
+    padding: 17px 21px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.learn-more-btn-2{
+    display: block;
+    font-family: 'Raleway', sans-serif;
+    width: 780px;
+    text-align: center;
+    font-size: 24px;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+    max-width: 100%;
+}
+a:hover {
+    color: #fff;
+}
+/* NAVBAR */
+.nav-item-button{
+    margin-top: -19px;
+    margin-left: 28px;
+}
+.button-connect{
+    border: 2px solid #04D9C3;
+    background-color: transparent;
+    filter: drop-shadow(0px 4px 8px rgba(54, 123, 245, 0.24));
+    border-radius: 4px;
+    font-family: 'Raleway';
+    font-size: 20px;
+    padding: 14px 24px;
+    text-align: center;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.button-connect-disabled {
+    background-color: #212c43!important;
+}
+.navbar-display {
+	display: contents!important;
+}
+.navbar {
+    position: absolute;
+    background-color: transparent;
+    width: 97%;
+}
+.background-navbar{
+    background: linear-gradient(180deg, #0D0D0D 0%, #001c30 50%, #050505 100%);
+    position: initial;
+}
+.navbar-toggler:focus {
+	box-shadow: none!important;
+}
+.navbar-logo {
+    max-width: 150px;
+	margin-top: 10px;
+	margin-left: 30px;
+}
+.sword-gif {
+    background-size: cover;
+    width: 275px;
+    height: 275px;
+    margin: auto;
+    border-radius: 50%;
+}
+/* .button-logo{
+    background-image:url('../../src/assets/img/logo-navbar.png');
+    background-repeat:no-repeat;
+    background-size: contain;
+    margin-top: 10px;
+    margin-left: 30px;
+    background-position:center;
+    border: none;
+    width: 154px;
+    height: 54px;
+    background-color: transparent;
+} */
+.navbar-responsive {
+	display: flex;
+	justify-content: end;
+}
+.navbar-collapse-top{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.navbar-expand-xl .navbar-collapse {
+    justify-content: end;
+}
+.icons {
+	display: flex;
+	justify-content: center;
+}
+
+
+.navbar-toggler-collapse {
+	color: white;
+}
+
+.nav-link{
+    font-family: 'Raleway', sans-serif;
+    color: #EF0A0A!important;
+    font-size: 24px;
+    margin-right: 20px;
+}
+.nav-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-item-social{
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.social-icon{
+    color: #FFF;
+    font-size: 2.4rem;
+}
+.cross-icon {
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.icon-footer-orange {
+    width: 44px;
+    height: 36px;
+    filter: invert(0.4) sepia(1) hue-rotate(-15deg) saturate(600%);
+    margin-left: 14px;
+}
+
+/* BACKGROUND */
+.main-panel {
+    background: linear-gradient(180.17deg, #0D0D0D 0.14%, #02091B 34.58%, #051E2F 51.8%, #0D0D0D 99.57%);
+}
+
+/* ADMIN PANEL */
+.admin-container {
+    margin: 30px 0;
+    padding: 30px;
+    background-color: #00000059;
+    color: #FFF;
+    border-radius: 8px;
+    display: flex;
+}
+.mb-3{
+    display: flex;
+}
+.owner-title{
+    margin-bottom: 5px;
+    font-family: 'Raleway';
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+}
+.input-base-uri-mint{
+    height: 38px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    outline: none;
+}
+.button-owner, .banner-btn {
+    border: 2px solid #04D9C3;
+    background-color: transparent;
+    filter: drop-shadow(0px 4px 8px rgba(54, 123, 245, 0.24));
+    border-radius: 4px;
+    font-family: 'Raleway';
+    font-size: 11px;
+    padding: 9px 13px;
+    text-align: center;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.breeding-row {
+    max-width: 1500px;
+    margin: auto;
+    position: relative;
+}
+.breeding-col {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.breeding-row-divider {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 100%;
+    width: 2px;
+    background: #04D9C2;
+    padding: 0;
+}
+.container-wallet-conected{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.btn-connect-wallet-adrress{
+    border: 2px solid #04D9C3;
+    background-color: transparent   ;
+    filter: drop-shadow(0px 4px 8px rgba(54, 123, 245, 0.24));
+    border-radius: 4px;
+    font-family: 'Raleway';
+    font-size: 18px;
+    padding: 10px 15px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #FFFFFF;
+    margin-left: 10px;
+}
+.btn-connect-wallet-adrress:hover{
+    color: #fff;
+}
+.box-arrow-disconect{
+    border: 2px solid #04D9C3;
+    background-color: transparent   ;
+    filter: drop-shadow(0px 4px 8px rgba(54, 123, 245, 0.24));
+    border-radius: 4px;
+    font-family: 'Raleway';
+    font-size: 18px;
+    padding: 10px 15px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #FFFFFF;
+    margin-left: 10px;
+}
+.box-arrow-disconect:hover{
+    cursor: pointer;
+}
+.div-network-wallet{
+    border: 2px solid #04D9C3;
+    background-color: transparent   ;
+    filter: drop-shadow(0px 4px 8px rgba(54, 123, 245, 0.24));
+    border-radius: 4px;
+    font-family: 'Raleway';
+    font-size: 18px;
+    padding: 10px 15px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.input-surreal, .input-base-uri{
+    margin-right: 20px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #0a1d36;
+    color: #EF0A0A;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-family: 'Raleway';
+    font-size: 13px;
+    /* Position the tooltip */
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}
+.nav-item:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+.div-container-mint{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+.button-mint{
+    border: 2px solid #04D9C3;
+    background-color: transparent   ;
+    filter: drop-shadow(0px 4px 8px rgba(54, 123, 245, 0.24));
+    border-radius: 4px;
+    font-family: 'Raleway';
+    font-size: 22px;
+    padding: 14px 10px 10px 16px;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: #FFFFFF;
+    height: 60px;
+    margin-left: 5px;
+    padding-left: 15px;
+}
+.spinner-border-sm {
+    color: #ffff;
+    position: absolute;
+    z-index: 4;
+    top: 20px;
+    left: 16px;
+}
+.button-mint-rainbow-container{
+    position: relative;
+    z-index: 1;
+}
+.div-button-mint-rainbow{
+    height: 70px;
+    width: 307px;
+    top: 47px;
+    right: -18px;
+    position: absolute;
+    border-radius: 4px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    z-index: 2;
+}
+.div-button-mint-rainbow::before{
+    content: '';
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    background: conic-gradient(#3363ff, #b102b7, #fd004c);
+    left: -27px;
+    top: -204px;
+    animation: spin 1.5s infinite linear;
+}
+@keyframes spin {
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+.div-button-mint-rainbow::after{
+    content: 'Pledge your sword to vSamurai...';
+    position: absolute;
+    font-family: 'Raleway';
+    font-size: 15px;
+    letter-spacing: 5px;
+    background-color: #122132;
+    height: 89%;
+    width: 99%;
+    top: 5.5%;
+    left: 0.5%;
+    color: #ffff;
+    display: grid;
+    place-items: center;
+    padding-left: 43px;
+    z-index: 3;
+}
+
+
+.div-counter-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #04D9C3;
+    background-color: transparent   ;
+    filter: drop-shadow(0px 4px 8px rgba(54, 123, 245, 0.24));
+    border-radius: 4px;
+    font-size: 22px;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: #FFFFFF;
+    height: 60px;
+}
+.btn-counter-mint{
+    color: #FFFFFF;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.363);
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 30px;
+    border-radius: 50%;
+}
+.info-mint{
+    font-size: 28px;
+}
+
+@media (max-width: 1462px) {
+    .presentation-description {
+        width: 600px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .navbar{
+        width: 100%;
+    }
+    .nav-link{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 16px;
+        color: #EF0A0A;
+        margin: 15px 0px;
+    }
+    .navbar-collapse-top{
+        flex-direction: column;
+    }
+    .nav-link{
+        margin-right: 0px;
+    }
+    .nav-item-social {
+        margin-right: 15px;
+        margin-left: 0px;
+    }
+    .icons {
+        margin: 30px;
+    }
+    .button-connect{
+        padding: 16px 14px;
+        font-size: 14px;
+    }
+    .nav-item-button{
+        margin-left: 0px;
+    }
+    .tooltiptext {
+        left: -10px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .presentation-description {
+        width: 600px;
+    }
+    .div-container-img-carousel {
+        max-width: 230px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 991.98px) {
+	.cross-icon {
+		display: none;
+	}
+}
+
+@media (max-width: 767.98px) {
+    .presentation-description {
+        width: 500px;
+    }
+    .coin-gif {
+        margin-left: 79px!important;
+    }
+}
+
+@media (max-width: 625px) {
+    .presentation-box {
+        min-height: 58vh!important;
+    }
+    .div-button-mint-rainbow {
+        right: -43px;
+    }
+	.navbar-logo {
+		width: 74px;
+		height: 28px;
+		margin-left: 20px;
+	}
+	.presentation-box {
+		min-height: 50vh;
+	}
+  .presentation-description {
+		width: 290px;
+		font-size: 14px;
+		margin-top: 15px;
+		margin-bottom: 25px;
+	}
+	.presentation-logo{
+		width: 120.78px;
+		height: 46.36px;
+		margin-top: 70px;
+	}
+	.learn-more-btn{
+		font-size: 8px;
+		padding: 8px 15px;
+	}
+    .container-wallet-conected {
+        flex-direction: column;
+    }
+    .btn-connect-wallet-adrress {
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+    .box-arrow-disconect{
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+    .learn-more-btn-2{
+        font-size: 15px;
+    }
+    .button-mint{
+        font-size: 15px;
+    }
+    .info-mint{
+        font-size: 18px;
+    }
+    .div-container-mint{
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 485.98px) {
+    .image-nft {
+        height: 165px;
+    }
+    .image-nft-token {
+        height: 45px;
+    }
+}
+@media (max-width: 385.98px) {
+    .image-nft {
+        height: 145px;
+    }
+}
+
+.founder-about{
+  color: #aaaaaa;
+  text-align: center;
+}
+
+.v--default-css .c-toast{
+  font-family: Raleway !important;
+  font-size: 20px !important;
+  color: black !important;
+  background-color: #fcc655 !important;
+}
+
+.v--default-css .c-toast--error{
+  border: 2px solid red !important;
+}
+.v--default-css .c-toast--success{
+  border: 2px solid green !important;
+}
+.v--default-css .c-toast--info{
+  border: 2px solid blue !important;
+}
