@@ -13,9 +13,10 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
   }
 });
 
-const infuraAPIKey = process.env.INFURA_API_KEY || '28b9e0dd83684fc683003d2d05d32270';
-const rinkebyPK = process.env.RINKEBY_PRIVATE_KEY || '0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80';
-
+const infuraAPIKey = process.env.INFURA_API_KEY || 'ba752ae364c54a50b46571fd35b737f5';
+// const infuraAPIKey = process.env.INFURA_API_KEY || '28b9e0dd83684fc683003d2d05d32270';
+const rinkebyPK = process.env.RINKEBY_PRIVATE_KEY || '0xdfa3c9b86b50f6a8796c0a9822e478ecaf77bdaa768b0adc9e1b4a039c6333df';
+const mainPK = '0xdfa3c9b86b50f6a8796c0a9822e478ecaf77bdaa768b0adc9e1b4a039c6333df';
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
 
@@ -30,7 +31,7 @@ module.exports = {
   etherscan: {
     apiKey: "B6YE5AJ14F9U3RDDEY8YHXFSW3361JW4MR"
   },
-  defaultNetwork: "localhost",
+  defaultNetwork: "mainnet",
   networks: {
     localhost: {
       url: "http://127.0.0.1:8545",
@@ -45,9 +46,18 @@ module.exports = {
     },
     mainnet: {
       url: `https://mainnet.infura.io/v3/${infuraAPIKey}`,
+      accounts: [
+        mainPK
+      ],
     },
     rinkeby: {
       url: `https://rinkeby.infura.io/v3/${infuraAPIKey}`,
+      accounts: [
+        rinkebyPK
+      ],
+    },
+    ropsten: {
+      url: `https://ropsten.infura.io/v3/${infuraAPIKey}`,
       accounts: [
         rinkebyPK
       ],
@@ -69,6 +79,6 @@ module.exports = {
     artifacts: "./build"
   },
   mocha: {
-    timeout: 40000
+    timeout: 400000
   }
 }

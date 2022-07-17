@@ -132,6 +132,20 @@ contract EDOToken is ERC20, Ownable {
     _mintRewards(_msgSender(), _nftId);
 	}
 
+  event UnstakeNFT(address indexed user, uint256 reward);
+
+  function unstakeNFT(uint256 _nftId) external {
+    require(address(vSamuraiContract) != address(0), 'NFT contract not set');
+    require(vSamuraiContract.ownerOf(_nftId) == _msgSender(), 'You are not the nft owner');
+
+    require(rarities[_nftId] != 0, 'Token cannot be unstaked if not exists.');
+    delete rarities[_nftId];
+    delete rewards[_msgSender()][_nftId];
+    delete lastUpdate[_msgSender()][_nftId];
+    emit UnstakeNFT(_msgSender(), _nftId);
+
+  }
+
   function min(uint256 a, uint256 b) internal pure returns (uint256) {
     return a <= b ? a : b;
   }

@@ -24,15 +24,15 @@ async function main() {
   const baseURL = 'ipfs://QmXCEv3rqNuaUDExMXLZNrkD41ZBYKsNjtH6SvBMBKH9zB/';
   const _maxPublicBatchSize = 1;
   const _maxBatchSize = 5;
-  const _developerAddress = "0x9D7a3F970Bbc7aB9C8537dc9637051b824A9eD0C";
+  const _developerAddress = "0xb0043558C4F2399Bb564B20F30a5Dc1Fb2d6e0Fd";
   const _developerFee = 10;
 
   /**
    * 0xa5409ec958c83c3f309868babaca7c86dcb077c1 // Mainnet
    * 0xf57b2c51ded3a29e6891aba85459d600256cf317 // Rinkeby
    */
-  const _proxyRegistryAddress = "0xf57b2c51ded3a29e6891aba85459d600256cf317"; // Change for rinkeby or production
-  const _owner = "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"; // test account 2
+  const _proxyRegistryAddress = "0xa5409ec958c83c3f309868babaca7c86dcb077c1"; // Change for rinkeby or production
+  const _owner = "0xb0043558C4F2399Bb564B20F30a5Dc1Fb2d6e0Fd"; // test account 2
 
   const _signer = "0xeAB1e71AF80a159f6A03c6Ab4BEB52356f7d6dB4"; // Backend signer pubkey
 

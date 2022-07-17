@@ -28,7 +28,10 @@
 						{{ nft.rarityClass }}
 					</div>
 					<button v-if="nft.rarity == 0" @click="stakeNFT(nft.id, nft.rarityBackend, $event)" type="button" class="button-connect">STAKE</button>
-					<button v-else :disabled="nft.reward == 0" @click="claimRewardsNFT(nft.id)" type="button" :class="`button-connect ${nft.reward == 0 ? 'button-connect-disabled' : ''}`">CLAIM</button>
+					<div v-else class="text-center">
+						<button :disabled="nft.reward == 0" @click="claimRewardsNFT(nft.id)" type="button" :class="`button-connect ${nft.reward == 0 ? 'button-connect-disabled' : ''}`">CLAIM</button><br><br>
+						<button :disabled="nft.reward == 0" @click="unstakeNFT(nft.id)" type="button" :class="`button-connect ${nft.reward == 0 ? 'button-connect-disabled' : ''}`">UNSTAKE</button>
+				</div>
 					<br><br><br><br>
 				</div>
 			</div>
@@ -44,7 +47,10 @@
 								{{ nft.rarityClass }}
 							</div>
 							<button v-if="nft.rarity == 0" @click="stakeNFT(nft.id, nft.rarityBackend, $event)" type="button" class="button-connect">STAKE</button>
-							<button v-else :disabled="nft.reward == 0" @click="claimRewardsNFT(nft.id)" type="button" :class="`button-connect ${nft.reward == 0 ? 'button-connect-disabled' : ''}`">CLAIM</button>
+							<div v-else class="text-center">
+								<button :disabled="nft.reward == 0" @click="claimRewardsNFT(nft.id)" type="button" :class="`button-connect ${nft.reward == 0 ? 'button-connect-disabled' : ''}`">CLAIM</button><br><br>
+								<button :disabled="nft.reward == 0" @click="unstakeNFT(nft.id)" type="button" :class="`button-connect ${nft.reward == 0 ? 'button-connect-disabled' : ''}`">UNSTAKE</button>
+						</div>
 						</div>
 					</SplideSlide>
 				</Splide>
@@ -76,62 +82,66 @@ export default {
       }
       return `https://storage.googleapis.com/vsamurai-images/${nft.id}.png`
     },
-	async stakeNFT(nftId, rarity, event){
-		console.log("rarity",rarity);
-			console.log("nftId",nftId);
+		async stakeNFT(nftId, rarity, event){
+			console.log("rarity",rarity);
+				console.log("nftId",nftId);
 
-			let element = event.target;
-			if(element.innerText == "INITIALIZING...")return;
+				let element = event.target;
+				if(element.innerText == "INITIALIZING...")return;
 
-		let apiBaseURI = "https://vsamurai-nft.wn.r.appspot.com"
-		let chainId = await NetworkService.getNetworkId()
-		let address = this.wallet.address;
-		let apiURL = `${apiBaseURI}/api/signatures/rarity?chainId=${chainId}&address=${address}&nftId=${nftId}`
+			let apiBaseURI = "https://vsamurai-nft.wn.r.appspot.com"
+			let chainId = await NetworkService.getNetworkId()
+			let address = this.wallet.address;
+			let apiURL = `${apiBaseURI}/api/signatures/rarity?chainId=${chainId}&address=${address}&nftId=${nftId}`
 
 
-		element.innerText = "INITIALIZING..." || "TRANSACTION COMPLETED";
+			element.innerText = "INITIALIZING..." || "TRANSACTION COMPLETED";
 
-		let signature = await axios.get(apiURL).then(res => {
-				this.$toast.info("Contract sent to your Wallet. Please accept to proceed.", {
+			let signature = await axios.get(apiURL).then(res => {
+					this.$toast.info("Contract sent to your Wallet. Please accept to proceed.", {
+						position: "top",
+						duration: 5000
+					});
+					element.innerText = "AWAITING ACCEPTANCE...";
+					return res.data;
+			}).catch(e => {
+					element.innerText = "INITIALIZATION FAILED!";
+					setTimeout(function(){
+							element.innerText = "STAKE";
+					}, 2000);
+				console.error(e)}
+			);
+			console.log("signature",signature);
+			let rewardResp = await EDOTokenServices.registerForRewards(signature, nftId, rarity);
+			if(rewardResp == "Error" || !rewardResp){
+				this.$toast.error("Your last transaction could not be completed!", {
 					position: "top",
-					duration: 5000
 				});
-				element.innerText = "AWAITING ACCEPTANCE...";
-				return res.data;
-		}).catch(e => {
-				element.innerText = "INITIALIZATION FAILED!";
-				setTimeout(function(){
-						element.innerText = "STAKE";
-				}, 2000);
-			console.error(e)}
-		);
-		console.log("signature",signature);
-		let rewardResp = await EDOTokenServices.registerForRewards(signature, nftId, rarity);
-		if(rewardResp == "Error" || !rewardResp){
-			this.$toast.error("Your last transaction could not be completed!", {
-				position: "top",
-			});
-				element.innerText = "TRANSACTION FAILED";
-				setTimeout(function(){
-					if(element)
-						element.innerText = "STAKE";
-				}, 2000);
-		}else{
-			this.$toast.success("Transaction completed!", {
-				position: "top",
-			});
-				element.innerText = "TRANSACTION COMPLETED";
+					element.innerText = "TRANSACTION FAILED";
+					setTimeout(function(){
+						if(element)
+							element.innerText = "STAKE";
+					}, 2000);
+			}else{
+				this.$toast.success("Transaction completed!", {
+					position: "top",
+				});
+					element.innerText = "TRANSACTION COMPLETED";
+			}
+			console.log("rewardResp",rewardResp);
+			await this.getUserTokens({})
+		},
+		async claimRewardsNFT(nftId){
+			await EDOTokenServices.claimRewards(nftId)
+			await this.getUserTokens({})
+		},
+		async rarities(nftId){
+			return await EDOTokenServices.rarities(nftId)
+		},
+		async unstakeNFT(nftId){
+			await EDOTokenServices.unstakeNFT(nftId)
+			await this.getUserTokens({})
 		}
-		console.log("rewardResp",rewardResp);
-		await this.getUserTokens({})
-	},
-	async claimRewardsNFT(nftId){
-		await EDOTokenServices.claimRewards(nftId)
-		await this.getUserTokens({})
-	},
-	async rarities(nftId){
-		return await EDOTokenServices.rarities(nftId)
-	},
   },
   computed: {
     ...mapState('collectable', ['collectable']),

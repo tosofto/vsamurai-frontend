@@ -50,6 +50,13 @@ const TokenContractABI = {
     });
   },
 
+  async unstakeNFT(_nftId) {
+    const TokenInstance = await this.getContractTokenInstance();
+    return TokenInstance.methods.unstakeNFT(_nftId).send({
+      from: wallet.address,
+    });
+  },
+
   async getTotalClaimable(address, tokenId) {
     const TokenInstance = await this.getContractTokenInstance();
     return TokenInstance.methods.getTotalClaimable(address, tokenId).call()

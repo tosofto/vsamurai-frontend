@@ -17,7 +17,7 @@ async function deployBreedingManager(breedingManagerInstance) {
   // We get the contract to deploy
   const BreedingManagerFactory = await hre.ethers.getContractFactory("BreedingManager");
 
-  const _owner = "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"; // test account 2
+  const _owner = "0xb0043558C4F2399Bb564B20F30a5Dc1Fb2d6e0Fd"; // test account 2
 
   const _signer = "0xeAB1e71AF80a159f6A03c6Ab4BEB52356f7d6dB4"; // Backend signer pubkey
 

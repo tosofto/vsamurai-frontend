@@ -4,8 +4,13 @@
   "description": "",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "contracts": "hardhat run scripts/deploy.js --network localhost",
+    "compile-contracts": "hardhat compile",
+    "contracts": "hardhat run scripts/deploy.js --network mainnet",    
+    "contracts:rinkeby": "hardhat run scripts/deploy.js --network rinkeby",  
+    "contracts:local": "hardhat run scripts/deploy.js --network localhost",
     "verify": "hardhat run scripts/verify.js --network mainnet",
+    "verify:local": "hardhat run scripts/verify.js --network localhost",
+    "verify:rinkeby": "hardhat run scripts/verify.js --network rinkeby",
     "start:dev": "__VUE_PROD_DEVTOOLS__=true parcel index.html",
     "start": "parcel index.html",
     "start:backend": "nodemon api",
@@ -13,8 +18,6 @@
     "blockchain-cli": "hardhat console --no-compile",
     "test": "hardhat test",
     "dev": "parcel index.html",
-    "compile-contracts": "hardhat compile",
-    "contracts:rinkeby": "hardhat run scripts/deploy.js --network rinkeby",
     "build:local": "parcel build index.html && cp _redirects dist/_redirects",
     "build": "parcel build index.html && cp _redirects dist/_redirects"
   },
